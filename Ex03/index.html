@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo da Adivinhação</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #2c2c44;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#tentativas {
+    margin-top: 10px;
+    color: #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Jogo da Adivinhação</h1>
+
+<p>Tente adivinhar o número entre 0 e 10</p>
+
+<input type="number" id="numero" placeholder="Digite um número">
+
+<br>
+
+<button onclick="verificarNumero()">
+Tentar
+</button>
+
+<div id="mensagem"></div>
+<div id="tentativas"></div>
+</div>

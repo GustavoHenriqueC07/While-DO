@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5d8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #6b3e26;
+        }
+
+        .menu {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .menu p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #6b3e26;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4d2b1a;
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>☕ Cafeteria</h1>
+
+        <div class="menu">
+            <p>1 - Café Expresso (R$ 5,00)</p>
+            <p>2 - Cappuccino (R$ 7,00)</p>
+            <p>3 - Pão de Queijo (R$ 4,00)</p>
+            <p>0 - Finalizar Pedido</p>
+        </div>
+
+        <input type="number" id="opcao" placeholder="Digite a opção">
+
+        <br>
+
+        <button onclick="fazerPedido()">
+            Adicionar
+        </button>
+
+        <p id="mensagem"></p>
+
+    </div>
+
+    <script>
+
+        let total = 0;
+
+        function fazerPedido() {
+
+            let opcao = Number(document.getElementById("opcao").value);
+            let mensagem = document.getElementById("mensagem");
+
+            switch(opcao) {
+
+                case 1:
+                    total += 5;
+                    mensagem.innerHTML = "☕ Café Expresso adicionado!";
+                    break;
+
+                case 2:
+                    total += 7;
+                    mensagem.innerHTML = "🥛 Cappuccino adicionado!";
+                    break;
+
+                case 3:
+                    total += 4;
+                    mensagem.innerHTML = "🧀 Pão de Queijo adicionado!";
+                    break;
+
+                case 0:
+                    mensagem.innerHTML =
+                        "✅ Pedido finalizado.<br>Total da conta: R$ " + total.toFixed(2);
+                    break;
+
+                default:
+                    mensagem.innerHTML = "❌ Opção inválida!";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

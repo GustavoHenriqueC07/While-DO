@@ -1,0 +1,115 @@
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Validação de Senha</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #050505, #0b1f44);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+.container {
+    width: 380px;
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #1e5eff;
+    box-shadow:
+        0 0 25px rgba(30, 94, 255, 0.5),
+        0 0 40px rgba(255, 0, 0, 0.25);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+    h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #1e5eff;
+}
+
+p {
+    color: #cfcfcf;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid #1e5eff;
+    background: #0d0d0d;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #ff0000, #1e5eff);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(30, 94, 255, 0.6);
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.erro {
+    color: #ff3b3b;
+}
+.sucesso {
+    color: #4cff7d;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>LOGIN</h1>
+<p>Digite a senha para acessar o sistema</p>
+
+<input type="password" id="senha" placeholder="Digite sua senha">
+
+<button onclick="validarSenha()">Entrar</button>
+
+<div id="mensagem"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
